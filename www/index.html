@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no" />
+    <meta charset="utf-8">
+    <title>Autodesk Viewer</title>
+    <style text="text/javascript">
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .my-custom-ui {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            margin: .3em;
+            padding: .3em;
+            font-size: 3em;
+            font-family: sans-serif;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+        }
+        
+        #MyViewerDiv {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            background-color: blueviolet;
+        }
+        
+        .myButtonDiv {
+            position: absolute;
+            top: 90%;
+            left: 5%;
+            z-index: 10;
+        }
+        
+        .my-custom-ui span {
+            color: red;
+        }
+        
+        .my-view-front-button {
+            background: red;
+        }
+        
+        .my-view-back-button {
+            background: blue;
+        }
+        
+        .my-custom-button {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size:cover;
+            background-image: url(http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png);
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="https://developer.api.autodesk.com/viewingservice/v1/viewers/style.css" />
+    <script src="https://developer.api.autodesk.com/viewingservice/v1/viewers/viewer3D.min.js"></script>
+    <script src="https://rawgit.com/Developer-Autodesk/library-javascript-view.and.data.api/master/js/Autodesk.ADN.Toolkit.Viewer.js"></script>
+    <script src="viewer.js"></script>
+    <script src="js/my-awesome-extension.js"></script>
+</head>
+
+<body>
+    <div class="full" id="MyViewerDiv"></div>
+    <div class="my-custom-ui">
+        <div>Items selecionados: <span id="MySelectionValue">0</span></div>
+        <div>Ferramenta de navegacao: <span id="MyToolValue">Nenhuma</span></div>
+    </div>
+
+    <div class="myButtonDiv">
+        <div>
+            <button id="MyAwesomeLockButton">travar vista!</button>
+            <button id="MyAwesomeUnlockButton">destravar vista!</button>
+        </div>
+    </div>
+</body>
+
+</html>
