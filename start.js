@@ -4,8 +4,10 @@ var api = require('./routes/api');
 
 var app = express();
 
+var port = process.env.PORT || 3000;
+
 app.use('/api', api);
-app.set('port', 3000);
+app.set('port', port);
 app.use('/', express.static(__dirname + '/www'));
 
 var server = app.listen(app.get('port'), function () {
